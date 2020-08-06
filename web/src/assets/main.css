@@ -1,0 +1,17 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  background-color: #381977;
+  font-size: 0.9rem;
+}
+
+#app {
+  background-color: #231155;
+  color: white;
+}
+
+thead {
+  border: solid 1px white;
+}

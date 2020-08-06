@@ -1,0 +1,17 @@
+{
+  "name": "vimlytics",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "vue": "^3.0.0-rc.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "@vue/compiler-sfc": "^3.0.0-rc.1",
+    "tailwindcss": "^1.6.2",
+    "vite": "^1.0.0-rc.1"
+  }
+}

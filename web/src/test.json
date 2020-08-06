@@ -1,0 +1,177 @@
+{
+	"settings": [{
+		"option": "autoindent",
+		"value": "",
+		"description": "take indent for new line from previous line",
+		"duplicate": false
+	}, {
+		"option": "colorcolumn",
+		"value": "80",
+		"description": "columns to highlight",
+		"duplicate": false
+	}, {
+		"option": "expandtab",
+		"value": "",
+		"description": "use spaces when \u003cTab\u003e is inserted",
+		"duplicate": false
+	}, {
+		"option": "foldlevel",
+		"value": "2",
+		"description": "close folds with a level higher than this",
+		"duplicate": false
+	}, {
+		"option": "foldmethod",
+		"value": "manual",
+		"description": "folding type",
+		"duplicate": false
+	}, {
+		"option": "foldnestmax",
+		"value": "10",
+		"description": "maximum fold depth",
+		"duplicate": false
+	}, {
+		"option": "foldenable",
+		"value": "",
+		"description": "set to display all folds open",
+		"duplicate": false
+	}, {
+		"option": "guifont",
+		"value": "OperatorMonoSSm",
+		"description": "GUI: Name(s) of font(s) to be used",
+		"duplicate": false
+	}, {
+		"option": "hlsearch",
+		"value": "",
+		"description": "highlight matches with last search pattern",
+		"duplicate": false
+	}, {
+		"option": "linespace",
+		"value": "1",
+		"description": "number of pixel lines to use between characters",
+		"duplicate": false
+	}, {
+		"option": "number",
+		"value": "",
+		"description": "print the line number in front of each line",
+		"duplicate": false
+	}, {
+		"option": "relativenumber",
+		"value": "",
+		"description": "show relative line number in front of each line",
+		"duplicate": false
+	}, {
+		"option": "rnu",
+		"value": "",
+		"description": "show relative line number in front of each line",
+		"duplicate": true
+	}, {
+		"option": "shiftwidth",
+		"value": "2",
+		"description": "number of spaces to use for (auto)indent step",
+		"duplicate": false
+	}, {
+		"option": "showcmd",
+		"value": "",
+		"description": "show (partial) command in status line",
+		"duplicate": false
+	}, {
+		"option": "smartindent",
+		"value": "",
+		"description": "smart autoindenting for C programs",
+		"duplicate": false
+	}, {
+		"option": "smarttab",
+		"value": "",
+		"description": "use 'shiftwidth",
+		"duplicate": false
+	}, {
+		"option": "tabstop",
+		"value": "2",
+		"description": "number of spaces that \u003cTab\u003e in file uses",
+		"duplicate": false
+	}, {
+		"option": "textwidth",
+		"value": "80",
+		"description": "maximum width of text that is being inserted",
+		"duplicate": false
+	}, {
+		"option": "title",
+		"value": "",
+		"description": "let Vim set the title of the window",
+		"duplicate": false
+	}, {
+		"option": "noshowmode",
+		"value": "",
+		"description": "message on status line to show current mode",
+		"duplicate": false
+	}, {
+		"option": "titlestring",
+		"value": "%{expand(\\\"%:p:h\\\")}",
+		"description": "string to use for the Vim window title",
+		"duplicate": false
+	}, {
+		"option": "directory",
+		"value": "$HOME/.vim/swapfiles/",
+		"description": "list of directory names for the swap file",
+		"duplicate": false
+	}, {
+		"option": "backspace",
+		"value": "indent,eol,start",
+		"description": "how backspace works at start of line",
+		"duplicate": false
+	}, {
+		"option": "splitright",
+		"value": "",
+		"description": "new window is put right of the current one",
+		"duplicate": false
+	}, {
+		"option": "laststatus",
+		"value": "2",
+		"description": "tells when last window has status lines",
+		"duplicate": false
+	}],
+	"leader": "\"\\\u003cSpace\u003e\"",
+	"plugged": [{
+		"name": "christoomey/vim-sort-motion",
+		"description": "Vim mapping for sorting a range of text"
+	}, {
+		"name": "ctrlpvim/ctrlp.vim",
+		"description": "Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder."
+	}, {
+		"name": "despreston/palenight.vim",
+		"description": "Soothing color scheme for your favorite [best] text editor"
+	}, {
+		"name": "fatih/vim-go",
+		"description": "Go development plugin for Vim"
+	}, {
+		"name": "itchyny/lightline.vim",
+		"description": "A light and configurable statusline/tabline plugin for Vim"
+	}, {
+		"name": "kshenoy/vim-signature",
+		"description": "Plugin to toggle, display and navigate marks"
+	}, {
+		"name": "michaeljsmith/vim-indent-object",
+		"description": "Vim plugin that defines a new text object representing lines of code at the same indent level. Useful for python/vim scripts, etc."
+	}, {
+		"name": "pangloss/vim-javascript",
+		"description": "Vastly improved Javascript indentation and syntax support in Vim."
+	}, {
+		"name": "scrooloose/nerdtree",
+		"description": "A tree explorer plugin for vim."
+	}, {
+		"name": "tmsvg/pear-tree",
+		"description": "A Vim auto-pair plugin that supports multi-character pairs, intelligent matching, and more"
+	}, {
+		"name": "tpope/vim-commentary",
+		"description": "commentary.vim: comment stuff out"
+	}, {
+		"name": "tpope/vim-surround",
+		"description": "surround.vim: quoting/parenthesizing made simple"
+	}, {
+		"name": "vimwiki/vimwiki",
+		"description": "Personal Wiki for Vim"
+	}, {
+		"name": "zhaocai/GoldenView.Vim",
+		"description": ""
+	}]
+}
