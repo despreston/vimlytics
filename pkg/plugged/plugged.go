@@ -3,6 +3,7 @@ package plugged
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/despreston/vimlytics/pkg/cache"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -17,8 +18,11 @@ type Plugin struct {
 func fetch(name string, wg *sync.WaitGroup, ch chan Plugin) {
 	defer wg.Done()
 
+	p := Plugin{Name: name}
+
 	// Check the cache
-	if p, has := cacheGet(name); has {
+	if description, has := cache.Get(name); has {
+		p.Description = description
 		ch <- p
 		return
 	}
@@ -52,13 +56,10 @@ func fetch(name string, wg *sync.WaitGroup, ch chan Plugin) {
 
 	log.Println(parsed)
 
-	p := Plugin{
-		Name:        name,
-		Description: parsed.Description,
-	}
+	p.Description = parsed.Description
 
 	// save to cache
-	go cacheSet(p)
+	go cache.Set(p.Name, p.Description)
 
 	ch <- p
 }
