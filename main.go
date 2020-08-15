@@ -6,22 +6,20 @@ import (
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
+	"os"
 	"time"
 )
 
 func cors(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
-		w.Header().Set("Access-Control-Allow-Methods", "POST")
-		w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type")
-		w.Header().Set("Content-Type", "application/json")
 		next.ServeHTTP(w, r)
 	})
 }
 
 func logger(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		log.Println(r.RequestURI)
+		log.Printf("Request: %s\n", r.RequestURI)
 		next.ServeHTTP(w, r)
 	})
 }
@@ -36,9 +34,15 @@ func main() {
 	// serve static content
 	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./web/dist")))
 
+	addr := os.Getenv("ADDR")
+
+	if len(addr) < 1 {
+		addr = "localhost:3001"
+	}
+
 	srv := &http.Server{
 		Handler:      router,
-		Addr:         "127.0.0.1:3001",
+		Addr:         addr,
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
@@ -46,6 +50,6 @@ func main() {
 	// Ensure that the redis conn works
 	redis.Client()
 
-	log.Println("Listening at :3001")
+	log.Printf("Listening at %s\n", addr)
 	log.Fatal(srv.ListenAndServe())
 }

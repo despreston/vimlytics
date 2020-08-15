@@ -9,8 +9,9 @@
     "vue": "^3.0.0-rc.1"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
     "@vue/compiler-sfc": "^3.0.0-rc.1",
+    "autoprefixer": "^9.8.6",
     "tailwindcss": "^1.6.2",
     "vite": "^1.0.0-rc.1"
   }

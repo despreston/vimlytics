@@ -10,6 +10,8 @@ import (
 )
 
 func Post(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
 	// 5mb
 	var maxFileSize int64 = 5 << 20
 

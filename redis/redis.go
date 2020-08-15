@@ -4,6 +4,7 @@ import (
 	"context"
 	redis "github.com/go-redis/redis/v8"
 	"log"
+	"os"
 	"sync"
 )
 
@@ -15,8 +16,14 @@ const Empty = redis.Nil
 
 func Client() *redis.Client {
 	once.Do(func() {
+		url := os.Getenv("REDIS_URL")
+
+		if len(url) < 1 {
+			url = "localhost:6379"
+		}
+
 		c = redis.NewClient(&redis.Options{
-			Addr:     "localhost:6379",
+			Addr:     url,
 			Password: "", // no password set
 			DB:       0,  // use default DB
 		})
