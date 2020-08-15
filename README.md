@@ -1,3 +1,5 @@
+![Vimlytics screenshot](/internal/screen.png)
+
 ## About
 
 Vimlytics is a golang + vue + redis application that let's users inspect .vimrc files.
