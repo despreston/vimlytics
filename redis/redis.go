@@ -31,7 +31,7 @@ func Client() *redis.Client {
 		_, err := c.Ping(Ctx).Result()
 
 		if err != nil {
-			log.Fatal("Failed to connect to Redis: %v", err)
+			log.Fatalf("Failed to connect to Redis: %v", err)
 		}
 	})
 

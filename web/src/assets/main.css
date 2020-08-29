@@ -1,5 +1,6 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/utilities';
+@import 'tailwindcss/components';
 
 body {
   background-color: #381977;
@@ -9,8 +10,31 @@ body {
 #app {
   background-color: #231155;
   color: white;
+  max-width: 800px;
 }
 
 thead {
   border: solid 1px white;
+}
+
+h1 {
+  color: #6de0f6;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+h2, h1 {
+  margin-bottom: 0.5rem;
+}
+
+h1 > a, h2 > a {
+  text-decoration: underline;
+}
+
+h1 > a:hover, h2 > a:hover {
+  text-decoration: none;
 }

@@ -1,7 +1,10 @@
 package main
 
 import (
+	"github.com/despreston/vimlytics/handlers/github"
 	"github.com/despreston/vimlytics/handlers/vimrc"
+	"github.com/despreston/vimlytics/internal/api"
+	"github.com/despreston/vimlytics/mongo"
 	"github.com/despreston/vimlytics/redis"
 	"github.com/gorilla/mux"
 	"log"
@@ -13,6 +16,7 @@ import (
 func cors(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Content-Type", "application-json")
 		next.ServeHTTP(w, r)
 	})
 }
@@ -29,7 +33,9 @@ func main() {
 	router.Use(cors)
 	router.Use(logger)
 
-	router.HandleFunc("/api/vimrc", vimrc.Post).Methods("POST")
+	router.Handle("/api/vimrc", api.Handler(vimrc.Upload)).Methods("POST")
+	router.Handle("/api/github/vimrc", api.Handler(github.Vimrc)).Methods("GET")
+	router.Handle("/api/github/user", api.Handler(github.User)).Methods("GET")
 
 	// serve static content
 	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./web/dist")))
@@ -49,6 +55,9 @@ func main() {
 
 	// Ensure that the redis conn works
 	redis.Client()
+
+	// Ensure that the mongo conn works.
+	mongo.Db()
 
 	log.Printf("Listening at %s\n", addr)
 	log.Fatal(srv.ListenAndServe())

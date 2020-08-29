@@ -2,8 +2,8 @@ package vimparser
 
 import (
 	"bufio"
-	"github.com/despreston/vimlytics/pkg/plugged"
-	"github.com/despreston/vimlytics/pkg/vimoptions"
+	"github.com/despreston/vimlytics/internal/plugged"
+	"github.com/despreston/vimlytics/internal/vimoptions"
 	"log"
 	"regexp"
 	"strings"

@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-const ttl = 24 * time.Hour
+const ttl = 72 * time.Hour
 
 func Get(key string) (string, bool) {
 	var val string
@@ -16,7 +16,7 @@ func Get(key string) (string, bool) {
 	if err == redis.Empty {
 		return "", false
 	} else if err != nil {
-		log.Println("Error @ redis GET: %v", err)
+		log.Printf("Error @ redis GET: %v", err)
 		return "", false
 	}
 
@@ -27,6 +27,6 @@ func Set(key string, val string) {
 	_, err := redis.Client().SetNX(redis.Ctx, key, val, ttl).Result()
 
 	if err != nil {
-		log.Println("Error @ redis SET: %v", err)
+		log.Printf("Error @ redis SET: %v", err)
 	}
 }
